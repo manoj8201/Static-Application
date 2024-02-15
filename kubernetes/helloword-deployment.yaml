@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloword-deployment
+  namespace: health-check
+  labels:
+    app: helloword
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-hello-world-app
+  template:
+    metadata:
+      labels:
+        app: node-hello-world-app
+    spec:
+      containers:
+      - name: node-hello-world-app-container
+        image: <aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com/nodejs-hello-world
+        imagePullPolicy: Always
+        ports:
+          - name: web
+            containerPort: 3000
+      imagePullSecrets:
+          - name: regcred
