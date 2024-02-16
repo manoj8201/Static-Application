@@ -9,9 +9,7 @@ spec:
   ports:
   - name: http
     port: 5000
-    protocol: TCP
     targetPort: 5000
-    nodePort: 30302
   selector:
     app: helloword-app
   type: LoadBalancer
