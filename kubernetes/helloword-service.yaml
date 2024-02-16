@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: app-deployment-service
-    namespace: app-deployment
+  name: app-deployment-service
+  namespace: app-deployment
   labels:
     app: helloword-app
 spec:
