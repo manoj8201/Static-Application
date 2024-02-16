@@ -20,7 +20,7 @@ spec:
         image: 058264125787.dkr.ecr.us-east-1.amazonaws.com/helloword:latest
         imagePullPolicy: Always
         ports:
-          - name: web
-            containerPort: 3000
+          - name: helloword-app
+            containerPort: 5000
       imagePullSecrets:
           - name: regcred
